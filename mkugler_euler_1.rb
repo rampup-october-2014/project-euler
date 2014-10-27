@@ -13,38 +13,28 @@
 # if not, move on to the next number
 # add up all the numbers, return it as a variable
 
-def divisible_by_3(number_to_check)
-  division_result = (number_to_check / 3)
-  if number_to_check % 3 == 0 # if dividing results in a whole number
-    return true
-  else return false
-  end
-end
-
-def divisible_by_5(number_to_check)
-  division_result = (number_to_check / 5)
-  if number_to_check % 5 == 0 # if dividing results in a whole number
+def divisible_by_multiple(number_to_check, multiple)
+  if number_to_check % multiple == 0 # if dividing results in a whole number
     return true
   else return false
   end
 end
 
 def all_multiples_3_5_below_1000
-  debug = false
-  stored_multiples = Array.new # initialize the array
+  debug = false                 # toggle debug messages
+  stored_multiples = Array.new  # initialize the array
   sum_of_multiples = 0
 
   for counting_upwards in 0..999
     current_number = counting_upwards
     # main logic
-    if divisible_by_3(current_number) == true || divisible_by_5(current_number) == true
+    if divisible_by_multiple(current_number, 3) == true || divisible_by_multiple(current_number, 5) == true
       stored_multiples.push(current_number) # append current number to stored_multiples
        puts "I put #{current_number} in stored_multiples array." if debug == true
     end
   end
 
   puts "I stored a total of #{stored_multiples.length} numbers." if debug == true
-  stored_multiples.inspect
   # loop is finished, all multiples of 3 and 5 are stored now
   stored_multiples.each do |saved_number|
     sum_of_multiples += saved_number
