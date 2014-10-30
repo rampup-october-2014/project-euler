@@ -6,7 +6,7 @@
 # If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
 # Find the sum of all the multiples of 3 or 5 below 1000.
 
-def multiples_below_1000(multiple1, multiple2, range)
+def find_and_add_multiples(multiple1, multiple2, range)
   debug = false                 # toggle debug messages
   stored_multiples = Array.new  # initialize the array
   sum_of_multiples = 0
@@ -27,4 +27,4 @@ def multiples_below_1000(multiple1, multiple2, range)
   sum_of_multiples
 end
 
-puts "According to Mehron Kugler's Ruby programming skills, the sum of all multiples of 3 and 5 below 1000 should be #{multiples_below_1000(3,5,1000)}."
+puts "According to Mehron Kugler's Ruby programming skills, the sum of all multiples of 3 and 5 below 1000 should be #{find_and_add_multiples(3,5,1000)}."
